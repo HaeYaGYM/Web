@@ -16,7 +16,7 @@ app.use("/board", boardrouter)
 app.use("/calendar", calendarrouter)
 
 app.get("/", (req, res) => {
-  fs.readFile(`./views/index.html`, (error, data) => {
+  fs.readFile(`views/index.html`, (error, data) => {
       if (error) {
           console.log(error);
           return res.status(500).send("<h1>500 Error</h1>");
