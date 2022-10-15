@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
           console.log(error);
           return res.status(500).send("<h1>500 Error</h1>");
       }
+      res.render
       res.writeHead(200, { "Content-Type": "text/html" });
       res.end(data);
   });
