@@ -4,6 +4,7 @@ const express = require("express"),
   boardrouter = require("./routes/Board"),
   calendarrouter = require("./routes/Calendar")
 
+//const database = require("./config/database") 
 const app = express()
 
 app.set('view engine', 'html')
@@ -19,7 +20,7 @@ app.get("/", (req, res) => {
   fs.readFile(`views/index.html`, (error, data) => {
       if (error) {
           console.log(error);
-          return res.status(500).send("<h1>500 Error</h1>");
+          return res.status(500).sendFile("./views/404.html");
       }
       res.render
       res.writeHead(200, { "Content-Type": "text/html" });

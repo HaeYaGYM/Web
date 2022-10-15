@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs")
 router.get("/", (req,res)=>
-        fs.readFile(`./views/board.html`, (error, data) => {
+        fs.readFile(`views/board.html`, (error, data) => {
             if (error) {
                 console.log(error);
                 return res.status(500).send("<h1>500 Error</h1>");
