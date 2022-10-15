@@ -4,6 +4,9 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     position: relative;
 }
+a {
+    text-decoration: none;
+}
 
 header {
     font-size: 0.75rem;
