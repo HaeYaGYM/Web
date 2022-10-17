@@ -234,3 +234,21 @@ body {
   footer p a .fa-behance {
     color: #1769ff;
   }
+
+  .body_box{
+    width: 100%;
+    display: flex;
+  }
+
+  .body_box > #weight, #height{
+    width: 40%;
+  }
+
+  .birth_box{
+    width: 100%;
+    display: flex;
+  }
+
+  .birth_box > #birth, #month, #day{
+    width: 23.4%;
+  }
