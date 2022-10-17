@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../public/css/join.css">
+        <link rel="stylesheet" type="text/css" href="/css/join.css">
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script src="../public/js/join.js"></script>
+        <script src="/js/join.js"></script>
     </head>
     <body>
       <div class="container">
@@ -14,7 +14,7 @@
         <!-- Links -->
         <ul class="links">
           <li>
-            <a href="#" id="signin">로그인</a>
+            <a href="#" id="signup">회원가입</a>
           </li>
           <li>
             <a href="#" id="reset">초기화</a>
@@ -23,39 +23,57 @@
         
         <!-- Form -->
         <form  action="" method="post">
+          
           <!-- email input -->
           <div class="first-input input__block first-input__block">
              <input type="email" placeholder="Email" class="input" id="email"   />
           </div>
+          
           <!-- password input -->
           <div class="input__block">
              <input type="password" placeholder="Password" class="input" id="password"    />
           </div>
+          
           <!-- repeat password input -->
           <div class="input__block">
+            <input type="password" placeholder="repeat_password" class="input" id="password"    />
+         </div>
+
+         <!-- nickname -->
+         <div class="input__block">
+            <input type="text" placeholder="nickname" class="input" id="nickname"    />
+         </div>
+
+         <!-- weight/height -->
+         <div class="input__block">
+            <div class="body_box">
+            <input type="text" placeholder="weight" class="input" id="weight"    />
+            <input type="text" placeholder="height" class="input" id="height"    />
+        </div>
+        </div>
+
+         <!-- birth -->
+         <div class="input__block">
+        <div class=birth_box>
+            <input type="text" placeholder="birth" class="input" id="birth"    />
+            <input type="text" placeholder="month" class="input" id="month"    />
+            <input type="text" placeholder="day" class="input" id="day"    />
+        </div>
+        </div>
+
+         
+          <!-- <div class="input__block"> 아직 몰라
              <input type="password" placeholder="Repeat password" class="input repeat__password" id="repeat__password"    />
-          </div>
+          </div> -->
           <!-- sign in button -->
+
           <button class="signin__btn">
-            Sign in
+            Sign Up
           </button>
         </form>
         <!-- separator -->
-        <div class="separator">
-          <p>OR</p>
-        </div>
-        <!-- google button -->
-        <button class="google__btn">
-          <i class="fa fa-google"></i>
-          Sign in with Google
-        </button>
-        <!-- google button -->
-        <button class="instagram__btn">
-          <i class="fa fa-instagram"></i>
-          Sign in with instagram
-        </button>
       </div>
-      
+    </div>
       <footer>
       </footer>
     </body>
