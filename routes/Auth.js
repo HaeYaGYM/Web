@@ -13,11 +13,11 @@ router.get("/sign_in", (req,res)=>
             res.end(data);
         }))
 
-router.post('/sign_in', (req,res) =>{
-            var email = req.email
-            var pw = req.pw
+/*router.post('/sign_in', (req,res) =>{
+            var email = req.body.email
+            var pw = req.body.pw
             
-        })
+        })*/
 
 router.get("/sign_up", (req,res)=>
         fs.readFile(`views/sign_up.html`, (error, data) => {
@@ -29,15 +29,15 @@ router.get("/sign_up", (req,res)=>
             res.end(data);
         }))
 
-router.post('/sign_up', (req,res) =>{
-        var email = req.email
-        var pw = req.pw
-        var pw2 = req.pw2
-        var name = req.name
-        var nick = req.nick
-        var weight = req.weight
-        var height = req.height
-        var birth = req.birth
-    })
+/*router.post('/sign_up', (req,res) =>{
+        var email = req.body.email
+        var pw = req.body.pw
+        var pw2 = req.body.pw2
+        var name = req.body.name
+        var nick = req.body.nick
+        var weight = req.body.weight
+        var height = req.body.height
+        var birth = req.body.birth
+    })*/
         
 module.exports = router
