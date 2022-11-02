@@ -22,23 +22,17 @@
         </ul>
         
         <!-- Form -->
-        <form  action="" method="post">
+        <form  action="/auth/sign_in_process" method="post">
           <!-- email input -->
           <div class="first-input input__block first-input__block">
-             <input type="email" placeholder="Email" class="input" id="email"   />
+             <input type="email" placeholder="Email" class="input" name="email"   />
           </div>
           <!-- password input -->
           <div class="input__block">
-             <input type="password" placeholder="Password" class="input" id="password"    />
-          </div>
-          <!-- repeat password input -->
-          <div class="input__block">
-             <input type="password" placeholder="Repeat password" class="input repeat__password" id="repeat__password"    />
+             <input type="password" placeholder="Password" class="input" name="password"    />
           </div>
           <!-- sign in button -->
-          <button class="signin__btn">
-            Sign in
-          </button>
+          <input type="submit" class="signin__btn" value="Sign in">
         </form>
         <!-- separator -->
         <div class="separator">
