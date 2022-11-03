@@ -23,11 +23,13 @@ app.use(session({
 
 const authrouter = require("./routes/Auth"),
   boardrouter = require("./routes/Board"),
-  calendarrouter = require("./routes/Calendar")
+  calendarrouter = require("./routes/Calendar"),
+  mypagerouter = require("./routes/Mypage")
 
 app.use("/auth", authrouter)
 app.use("/board", boardrouter)
 app.use("/calendar", calendarrouter)
+app.use("/mypage", mypagerouter)
 
 app.get("/", (req, res) => {
   if(req.session.isOwner == true){
