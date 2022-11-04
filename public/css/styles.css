@@ -1,6 +1,5 @@
 body {
     width: 100%;
-    font-family: 'Noto Sans KR', sans-serif;
     position: relative;
 }
 a {
@@ -8,8 +7,6 @@ a {
 }
 
 header {
-    font-size: 0.75rem;
-    background-color: white;
 }
 
 strong {
