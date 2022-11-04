@@ -1,12 +1,12 @@
 #header__mobileAd {
-    background-color: #4C94FA;
+    background-color: rgb(96, 174, 241);
     color: white;
     font-weight: 300;
     padding: 0.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 13px;
+    height: 23px;
 }
 
 #header__mobileAd a {
@@ -20,7 +20,7 @@
     justify-content: space-between;
     align-items: center;
     width: 880px;
-    margin: 0.75rem auto;
+    margin: 3rem auto;
 }
 
 #header__main #header__logo {
