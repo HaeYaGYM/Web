@@ -1,43 +1,82 @@
-const express = require("express")
-const router = express.Router()
-const fs = require("fs")
+const express = require("express");
+const router = express.Router();
+const { getAuth,  
+    signInWithEmailAndPassword
+    } = require('firebase/auth');
+  const firestore = require('firebase-admin').firestore();
+const admin = require('firebase-admin')
+  const auth = getAuth();
+  const session = require('express-session')
+  const filestore = require('session-file-store')(session)
 
-    
-router.get("/sign_in", (req,res)=>
-        fs.readFile(`views/sign_in.html`, (error, data) => {
-            if (error) {
-                console.log(error)
-                return res.status(500).send("<h1>500 Error</h1>")
-            }
-            res.writeHead(200, { "Content-Type": "text/html" })
-            res.end(data);
-        }))
+router.get("/sign_in", (req,res)=>{
+    res.render('sign_in')})
 
-/*router.post('/sign_in', (req,res) =>{
-            var email = req.body.email
-            var pw = req.body.pw
-            
-        })*/
+router.post('/sign_in_process', async(req, res) =>{
+    const user = {
+        email:req.body.email,
+        password:req.body.pw
+    }
+    signInWithEmailAndPassword(auth, user.email, user.password)
+    {
+        req.session.isOwner = true
+        req.session.email = req.body.email
+    }
+    res.status(200);
+    res.redirect('/')
+  
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  })}); 
 
 router.get("/sign_up", (req,res)=>
-        fs.readFile(`views/sign_up.html`, (error, data) => {
-            if (error) {
-                console.log(error)
-                return res.status(500).send("<h1>500 Error</h1>")
-            }
-            res.writeHead(200, { "Content-Type": "text/html" })
-            res.end(data);
-        }))
+        res.render('sign_up'))
 
-/*router.post('/sign_up', (req,res) =>{
-        var email = req.body.email
-        var pw = req.body.pw
-        var pw2 = req.body.pw2
-        var name = req.body.name
-        var nick = req.body.nick
-        var weight = req.body.weight
-        var height = req.body.height
-        var birth = req.body.birth
-    })*/
+
+router.post('/sign_up_process', async(req, res) =>{
+    if (req.body.password != req.body.pw2){
+        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+        res.write("<script>alert('비밀번호가 다릅니다')</script>")
+        res.write("<script>window.location=\"/auth/sign_up\"</script>")
+        
+    } else{
+        const user = {
+            email: req.body.email,
+            name:req.body.name,
+            nick:req.body.nick,
+            weight:req.body.weight,
+            height:req.body.height,
+            year:req.body.year,
+            month:req.body.month,
+            day:req.body.day
+          }
+        const userres = await admin.auth().createUser({
+        email:user.email,
+        password:req.body.password,
+        emailVerified:false,
+        disabled:false
+        })
+        
+        await firestore.collection("users").doc(user.email).set({
+                    email:user.email,
+                    name: user.name,
+                    nick: user.nick,
+                    weight:user.weight,
+                    height:user.height,
+                    birth: user.year + "-" + user.month + "-" + user.day 
+                  })
+                  res.redirect('/auth/sign_in')
+        .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;});
+    }})
+
+router.get('/logout', (req, res)=>{
+    req.session.destroy(function(error){
+        req.session
+        res.redirect('/')
+    }
+)})    
         
 module.exports = router
