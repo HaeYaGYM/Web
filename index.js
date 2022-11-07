@@ -1,6 +1,5 @@
 const express = require("express");
 const admin = require('firebase-admin');
-const validateEmailAndPassword = require('./module/validate-email-and-password');
 const firebaseConfig = require('./config/database.js');
 const { initializeApp } = require('firebase/app');
 const cors = require('cors');
@@ -28,6 +27,9 @@ app.use(session({
   secret:'hyg',
   resave: false,
   saveUninitialized: true,
+  cookie:{
+    secure:false
+  },
   store:new filestore()
 }))
   
@@ -45,7 +47,7 @@ app.get("/", (req, res) => {
   if(req.session.isOwner == true){
     res.render('index',{
         isOwner : req.session.isOwner,
-        nick : req.session.nick
+        email : req.session.email
     })
 }else{
     res.render('index',{

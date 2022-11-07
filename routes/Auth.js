@@ -6,8 +6,6 @@ const { getAuth,
   const firestore = require('firebase-admin').firestore();
 const admin = require('firebase-admin')
   const auth = getAuth();
-  const session = require('express-session')
-  const filestore = require('session-file-store')(session)
 
 router.get("/sign_in", (req,res)=>{
     res.render('sign_in')})
@@ -18,18 +16,20 @@ router.post('/sign_in_process', async(req, res) =>{
         password:req.body.pw
     }
     signInWithEmailAndPassword(auth, user.email, user.password)
-    {
-        req.session.isOwner = true
-        req.session.email = req.body.email
-    }
-    res.status(200);
-    res.redirect('/')
-  
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  })}); 
-
+    .then( () =>{
+      res.status(200)
+      req.session.isOwner = true
+      req.session.email = user.email
+      console.log(req.session)
+      res.redirect('/')}
+    )
+      .catch ((error) => {const errorCode = error.code;
+      const errorMessage = error.message;
+      res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+      res.write(`<script>alert('${errorCode} ${errorMessage}')</script>`)
+      res.write("<script>window.location=\"/auth/sign_in\"</script>")}
+      )})
+      
 router.get("/sign_up", (req,res)=>
         res.render('sign_up'))
 
