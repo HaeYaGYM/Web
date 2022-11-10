@@ -153,6 +153,7 @@ function changeToday(e){
     keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate();
     reshowingList();
 }
+clickStart();
 
 //클릭해서 날짜 변경 및 왼쪽 화면 변경
 

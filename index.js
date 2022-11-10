@@ -30,7 +30,6 @@ app.use(session({
   cookie:{
     secure:false
   },
-  store:new filestore()
 }))
   
 const authrouter = require("./routes/Auth"),

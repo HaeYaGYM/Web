@@ -23,12 +23,7 @@ router.post('/sign_in_process', async(req, res) =>{
       console.log(req.session)
       res.redirect('/')}
     )
-      .catch ((error) => {const errorCode = error.code;
-      const errorMessage = error.message;
-      res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
-      res.write(`<script>alert('${errorCode} ${errorMessage}')</script>`)
-      res.write("<script>window.location=\"/auth/sign_in\"</script>")}
-      )})
+})
       
 router.get("/sign_up", (req,res)=>
         res.render('sign_up'))
@@ -67,9 +62,7 @@ router.post('/sign_up_process', async(req, res) =>{
                     birth: user.year + "-" + user.month + "-" + user.day 
                   })
                   res.redirect('/auth/sign_in')
-        .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;});
+
     }})
 
 router.get('/logout', (req, res)=>{

@@ -1,405 +1,418 @@
 body {
-    font-family: "Montserrat", sans-serif;
-    background: white;
-    margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background: white;
+  margin: 0;
+}
+
+td{
+  height: 29px;
+}
+
+.container {
+  display: block;
+  max-width: 1280px;
+  width: 80%;
+  margin: 120px auto;
+}
+
+.page_name{
+  margin-left: 600px;
+  margin-bottom: 100px;
+  font-style: bold;
+  font-size: 2em;
+  font-weight: 700;
+  width: 500px;
+}
+
+.page_body{
+  width: 1280px;
+  height: 700px;
+  margin-top: 30px;
+}
+.left_section{
+  width: 320px;
+  height: 700px;
+  display: inline-block;
+}
+.profile{
+  width: 320px;
+  height: 600px;
+  background-color: rgba(236, 247, 254, 0.966);
+  margin-top: 20px;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  position: relative;
+}
+
+.main_section{
+  display: inline-block;
+  width: 800px;
+  margin-left: 75px;
+}
+  .main_head{
+      width: 900px;
+}
+.main_write, .add_write{
+  display: inline-block;
+  color: gray;
+}
+
+.main_write{
+  font-size: 20px;
+  font-weight: 550;
+}
+
+.add_write{
+  float: right;
+}
+
+.left_write{
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.table_class{
+  width: 900px;
+  height: 600px;
+}
+
+.up_table{
+  margin-top: 20px;
+}
+
+table{
+  width: 100%;
+  border-top: 3px solid;
+  border-color: rgb(216, 216, 216);
+  border-collapse : collapse;
+}
+
+tr,td{
+  border-bottom: 1px solid rgb(216, 216, 216);
+  padding: 10px;
+}
+
+.left_table{
+  width: 200px;
+  background-color: rgb(236, 247, 254);
+}
+
+.down_write{
+  display: inline-block;
+}
+
+.inline{
+  
+  background-color: rgb(245, 245, 246);
+  width: 300px;
+  height: 37.5px;
+}
+.btn_ok{
+  margin: auto;
+  display: block;
+}
+
+.btn{
+  margin-left: 680px;
+  color: white;
+  background-color: rgb(62,176,247);
+  width:120px;
+  height: 50px;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-color: rgb(62, 176, 247);
+  border: 0;
+  outline: 0;
+
+}
+.img{
+  background-image: url(/logo/logo.png);
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  margin-left: 64px;
+  position: absolute;
+  margin-top: 30px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
   }
 
-  td{
-    height: 29px;
-  }
-
-  .container {
-    display: block;
-    max-width: 1280px;
-    width: 80%;
-    margin: 120px auto;
-  }
-
-  .page_name{
-    margin-left: 600px;
-    margin-bottom: 100px;
-    font-style: bold;
-    font-size: 2em;
-    font-weight: 700;
-    width: 500px;
-  }
-
-  .page_body{
-    width: 1280px;
-    height: 700px;
-    margin-top: 30px;
-  }
-  .left_section{
-    width: 320px;
-    height: 700px;
-    display: inline-block;
-  }
-  .profile{
-    width: 320px;
-    height: 600px;
-    background-color: rgb(236, 247, 254);
-    margin-top: 20px;
-    border-top-left-radius: 2em;
-    border-top-right-radius: 2em;
-    border-bottom-left-radius: 2em;
-    border-bottom-right-radius: 2em;
-    position: relative;
-  }
-
-  .main_section{
-    display: inline-block;
-    width: 800px;
+  .profile_name{
+    width: 50px;
+    justify-content: center;
+    height: 30px;
+    position: absolute;
+    margin-top: 270px;
     margin-left: 75px;
   }
-    .main_head{
-        width: 900px;
-}
-  .main_write, .add_write{
-    display: inline-block;
+
+  .my_pro{
+    width: 70px;
+    justify-content: center;
+    height: 30px;
+    position: absolute;
+    margin-top: 330px;
+    margin-left: 75px;
   }
 
-  .main_write{
-    font-size: 20px;
-    font-weight: 550;
-  }
-
-  .add_write{
-    float: right;
-  }
-
-  .left_write{
-    text-align: center;
-    font-weight: 600;
-    font-size: 20px;
-  }
-
-  .table_class{
-    width: 900px;
-    height: 600px;
-  }
-
-  .up_table{
-    margin-top: 20px;
-  }
-
-  table{
-    width: 100%;
-    border-top: 3px solid;
-    border-color: rgb(216, 216, 216);
-    border-collapse : collapse;
-  }
-
-  tr,td{
-    border-bottom: 1px solid rgb(216, 216, 216);
-    padding: 10px;
-  }
-
-  .left_table{
-    width: 200px;
-    background-color: rgb(236, 247, 254);
-  }
-
-  .down_write{
-    display: inline-block;
-  }
-
-  .inline{
-    border: none;
-    background-color: rgb(245, 245, 246);
-    width: 300px;
-    height: 37.5px;
-  }
-  .btn_ok{
-    margin: auto;
-    display: block;
-  }
-
-  .btn{
-    margin-left: 680px;
-    color: white;
-    background-color: rgb(62,176,247);
-    width:120px;
-    height: 50px;
+  .pro_name{
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
-    border-color: white;
   }
-  .img{
-    width: 200px;
-    height: 200px;
-    background-color: aqua;
-    margin-left: 64px;
+
+  .my_pro_box{
+    width: 80px;
+    justify-content: center;
+    height: 100px;
     position: absolute;
-    margin-top: 30px;
-    border-radius: 50%;
-    }
+    margin-top: 380px;
+    margin-left: 65px;
+  }
 
-    .profile_name{
-      width: 50px;
-      justify-content: center;
-      height: 30px;
-      position: absolute;
-      margin-top: 270px;
+  .box{
+    width: 200px;
+    height: 130px;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+  }
+
+  .save{
+    width: 120px;
+    position: absolute;
+    height: 60px;
+    margin-top: 530px;
+    margin-left: 125px;
+  }
+
+  #btn_save{
+    background-color: rgb(62,176,247);
+    border-color: white;
+    color: white;
+    border: 0;
+    outline: 0;
+  }
+
+  .btn_save{
+    width: 70px;
+    height: 40px;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+  }body {
+      font-family: "Montserrat", sans-serif;
+      background: white;
+      margin: 0;
+    }
+  
+    td{
+      height: 29px;
+    }
+  
+    .container {
+      display: block;
+      max-width: 1280px;
+      width: 80%;
+      margin: 120px auto;
+    }
+  
+    .page_name{
+      margin-left: 600px;
+      margin-bottom: 100px;
+      font-style: bold;
+      font-size: 2em;
+      font-weight: 700;
+      width: 500px;
+    }
+  
+    .page_body{
+      width: 1280px;
+      height: 700px;
+      margin-top: 30px;
+    }
+    .left_section{
+      width: 320px;
+      height: 700px;
+      display: inline-block;
+    }
+    .profile{
+      width: 320px;
+      height: 600px;
+      background-color: rgb(236, 247, 254);
+      margin-top: 20px;
+      border-top-left-radius: 2em;
+      border-top-right-radius: 2em;
+      border-bottom-left-radius: 2em;
+      border-bottom-right-radius: 2em;
+      position: relative;
+    }
+  
+    .main_section{
+      display: inline-block;
+      width: 800px;
       margin-left: 75px;
     }
-
-    .my_pro{
-      width: 70px;
-      justify-content: center;
-      height: 30px;
-      position: absolute;
-      margin-top: 330px;
-      margin-left: 75px;
+      .main_head{
+          width: 900px;
+  }
+    .main_write, .add_write{
+      display: inline-block;
     }
-
-    .pro_name{
-      border-top-left-radius: 1em;
-      border-top-right-radius: 1em;
-      border-bottom-left-radius: 1em;
-      border-bottom-right-radius: 1em;
+  
+    .main_write{
+      font-size: 20px;
+      font-weight: 550;
     }
-
-    .my_pro_box{
-      width: 80px;
-      justify-content: center;
-      height: 80px;
-      position: absolute;
-      margin-top: 380px;
-      margin-left: 65px;
+  
+    .add_write{
+      float: right;
     }
-
-    .box{
+  
+    .left_write{
+      text-align: center;
+      font-weight: 600;
+      font-size: 20px;
+    }
+  
+    .table_class{
+      width: 900px;
+      height: 600px;
+    }
+  
+    .up_table{
+      margin-top: 20px;
+    }
+  
+    table{
+      width: 100%;
+      border-top: 3px solid;
+      border-color: rgb(216, 216, 216);
+      border-collapse : collapse;
+    }
+  
+    tr,td{
+      border-bottom: 1px solid rgb(216, 216, 216);
+      padding: 10px;
+    }
+  
+    .left_table{
       width: 200px;
-      height: 130px;
-      border-top-left-radius: 1em;
-      border-top-right-radius: 1em;
-      border-bottom-left-radius: 1em;
-      border-bottom-right-radius: 1em;
+      background-color: rgb(236, 247, 254);
     }
-
-    .save{
-      width: 120px;
-      position: absolute;
-      height: 60px;
-      margin-top: 530px;
-      margin-left: 125px;
+  
+    .down_write{
+      display: inline-block;
     }
-
-    #btn_save{
-      background-color: rgb(62,176,247);
-      border-color: white;
+  
+    .inline{
+      border: none;
+      background-color: rgb(245, 245, 246);
+      width: 300px;
+      height: 37.5px;
+    }
+    .btn_ok{
+      margin: auto;
+      display: block;
+    }
+  
+    .btn{
+      margin-left: 680px;
       color: white;
-    }
-
-    .btn_save{
-      width: 70px;
-      height: 40px;
+      background-color: rgb(62,176,247);
+      width:120px;
+      height: 50px;
       border-top-left-radius: 1em;
       border-top-right-radius: 1em;
       border-bottom-left-radius: 1em;
       border-bottom-right-radius: 1em;
-    }body {
-        font-family: "Montserrat", sans-serif;
-        background: white;
-        margin: 0;
+      border-color: white;
+    }
+    .img{
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      margin-left: 64px;
+      position: absolute;
+      margin-top: 30px;
+      border-radius: 50%;
       }
-    
-      td{
-        height: 29px;
-      }
-    
-      .container {
-        display: block;
-        max-width: 1280px;
-        width: 80%;
-        margin: 120px auto;
-      }
-    
-      .page_name{
-        margin-left: 600px;
-        margin-bottom: 100px;
-        font-style: bold;
-        font-size: 2em;
-        font-weight: 700;
-        width: 500px;
-      }
-    
-      .page_body{
-        width: 1280px;
-        height: 700px;
-        margin-top: 30px;
-      }
-      .left_section{
-        width: 320px;
-        height: 700px;
-        display: inline-block;
-      }
-      .profile{
-        width: 320px;
-        height: 600px;
-        background-color: rgb(236, 247, 254);
-        margin-top: 20px;
-        border-top-left-radius: 2em;
-        border-top-right-radius: 2em;
-        border-bottom-left-radius: 2em;
-        border-bottom-right-radius: 2em;
-        position: relative;
-      }
-    
-      .main_section{
-        display: inline-block;
-        width: 800px;
+  
+      .profile_name{
+        width: 50px;
+        justify-content: center;
+        height: 30px;
+        position: absolute;
+        margin-top: 270px;
         margin-left: 75px;
       }
-        .main_head{
-            width: 900px;
-    }
-      .main_write, .add_write{
-        display: inline-block;
+  
+      .my_pro{
+        width: 70px;
+        justify-content: center;
+        height: 30px;
+        position: absolute;
+        margin-top: 330px;
+        margin-left: 75px;
       }
-    
-      .main_write{
-        font-size: 20px;
-        font-weight: 550;
-      }
-    
-      .add_write{
-        float: right;
-      }
-    
-      .left_write{
-        text-align: center;
-        font-weight: 600;
-        font-size: 20px;
-      }
-    
-      .table_class{
-        width: 900px;
-        height: 600px;
-      }
-    
-      .up_table{
-        margin-top: 20px;
-      }
-    
-      table{
-        width: 100%;
-        border-top: 3px solid;
-        border-color: rgb(216, 216, 216);
-        border-collapse : collapse;
-      }
-    
-      tr,td{
-        border-bottom: 1px solid rgb(216, 216, 216);
-        padding: 10px;
-      }
-    
-      .left_table{
-        width: 200px;
-        background-color: rgb(236, 247, 254);
-      }
-    
-      .down_write{
-        display: inline-block;
-      }
-    
-      .inline{
-        border: none;
-        background-color: rgb(245, 245, 246);
-        width: 300px;
-        height: 37.5px;
-      }
-      .btn_ok{
-        margin: auto;
-        display: block;
-      }
-    
-      .btn{
-        margin-left: 680px;
-        color: white;
-        background-color: rgb(62,176,247);
-        width:120px;
-        height: 50px;
+  
+      .pro_name{
         border-top-left-radius: 1em;
         border-top-right-radius: 1em;
         border-bottom-left-radius: 1em;
         border-bottom-right-radius: 1em;
-        border-color: white;
+        border: 0;
+        outline: 0;
       }
-      .img{
-        width: 200px;
-        height: 200px;
-        background-color: aqua;
-        margin-left: 64px;
+  
+      .my_pro_box{
+        width: 80px;
+        justify-content: center;
+        height: 80px;
         position: absolute;
-        margin-top: 30px;
-        border-radius: 50%;
-        }
-    
-        .profile_name{
-          width: 50px;
-          justify-content: center;
-          height: 30px;
-          position: absolute;
-          margin-top: 270px;
-          margin-left: 75px;
-        }
-    
-        .my_pro{
-          width: 70px;
-          justify-content: center;
-          height: 30px;
-          position: absolute;
-          margin-top: 330px;
-          margin-left: 75px;
-        }
-    
-        .pro_name{
-          border-top-left-radius: 1em;
-          border-top-right-radius: 1em;
-          border-bottom-left-radius: 1em;
-          border-bottom-right-radius: 1em;
-        }
-    
-        .my_pro_box{
-          width: 80px;
-          justify-content: center;
-          height: 80px;
-          position: absolute;
-          margin-top: 380px;
-          margin-left: 65px;
-        }
-    
-        .box{
-          width: 200px;
-          height: 130px;
-          border-top-left-radius: 1em;
-          border-top-right-radius: 1em;
-          border-bottom-left-radius: 1em;
-          border-bottom-right-radius: 1em;
-        }
-    
-        .save{
-          width: 120px;
-          position: absolute;
-          height: 60px;
-          margin-top: 530px;
-          margin-left: 125px;
-        }
-    
-        #btn_save{
-          background-color: rgb(62,176,247);
-          border-color: white;
-          color: white;
-        }
-    
-        .btn_save{
-          width: 70px;
-          height: 40px;
-          border-top-left-radius: 1em;
-          border-top-right-radius: 1em;
-          border-bottom-left-radius: 1em;
-          border-bottom-right-radius: 1em;
-        }
+        margin-top: 380px;
+        margin-left: 65px;
+      }
+  
+      .box{
+        width: 200px;
+        height: 130px;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+        border: 0;
+        outline: 0;
+      }
+  
+      .save{
+        width: 120px;
+        position: absolute;
+        height: 60px;
+        margin-top: 530px;
+        margin-left: 125px;
+      }
+  
+      #btn_save{
+        background-color: rgb(62,176,247);
+        border-color: white;
+        color: white;
+      }
+  
+      .btn_save{
+        width: 70px;
+        height: 40px;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+      }
