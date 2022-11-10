@@ -5,7 +5,7 @@ const { getAuth,
     } = require('firebase/auth');
   const firestore = require('firebase-admin').firestore();
 const admin = require('firebase-admin')
-  const auth = getAuth();
+ 
 
 router.get("/sign_in", (req,res)=>{
     res.render('sign_in')})
@@ -15,15 +15,29 @@ router.post('/sign_in_process', async(req, res) =>{
         email:req.body.email,
         password:req.body.pw
     }
+    const userRef = firestore.collection('users').doc(req.body.email)
+    const auth = getAuth();
     signInWithEmailAndPassword(auth, user.email, user.password)
     .then( () =>{
       res.status(200)
-      req.session.isOwner = true
-      req.session.email = user.email
+      }
+    ).catch ((error) => {const errorCode = error.code;
+      const errorMessage = error.message;
+      res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+      res.write(`<script>alert('${errorCode} ${errorMessage}')</script>`)
+      res.write("<script>window.location=\"/auth/sign_in\"</script>")}
+      )
+    const doc = await userRef.get()
+    if (!doc.exists) {
+        console.log('No such document!');
+    } else {
+        req.session.isOwner = true
+        req.session.nick = doc.data().nick
+        console.log('Document data:', doc.data().nick); 
+      }
       console.log(req.session)
-      res.redirect('/')}
-    )
-})
+      res.redirect('/')
+    })
       
 router.get("/sign_up", (req,res)=>
         res.render('sign_up'))
@@ -62,14 +76,17 @@ router.post('/sign_up_process', async(req, res) =>{
                     birth: user.year + "-" + user.month + "-" + user.day 
                   })
                   res.redirect('/auth/sign_in')
-
+        .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;});
     }})
 
-router.get('/logout', (req, res)=>{
+router.get('/logout', async(req, res)=>{
+  const auth = getAuth();
+  await signOut(auth);
     req.session.destroy(function(error){
-        req.session
-        res.redirect('/')
-    }
-)})    
+        req.session})
+    res.redirect('/')
+})    
         
 module.exports = router

@@ -25,14 +25,14 @@
             <a href="/"><img src="/logo/logo.png" id="header__logo"></a>
             <nav>
                 <% if(isOwner == false) {%>
-                    <a href="/Board">커뮤니티</a> 
+                    <a href="/Board/list">커뮤니티</a>
                     <a href="/auth/sign_in">로그인</a>
                     <a href="/auth/sign_up">회원가입</a>
-                    <% }else{ %>
-                        <%= email %>
+                    <% } else { %>
+                        <%= nick %>
                         <a href="/MyPage">마이페이지</a> 
                         <a href="/Calendar">운동달력</a> 
-                        <a href="/Board">커뮤니티</a> 
+                        <a href="/Board/list">커뮤니티</a>
                         <a href="/auth/logout">로그아웃</a>   
                         <% } %>
             </nav>
@@ -135,7 +135,7 @@
                 <a href="#" class="bt last">>></a>
             </div>
             <div class="bt_wrap">
-                <a href="write.html" class="on">글 작성</a>
+                <a href="/board/write" class="on">글 작성</a>
                 <!--<a href="#">수정</a>-->
             </div>
         </div>
