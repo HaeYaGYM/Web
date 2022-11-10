@@ -3,7 +3,7 @@ const router = express.Router();
 router.get("/", (req,res)=>{
         if(req.session.isOwner == true){
         res.render('board_list',{
-            isOwner : req.session.isOwner,
+            isOwner : true,
             email : req.session.email
         })
     }else{

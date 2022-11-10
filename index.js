@@ -29,8 +29,7 @@ app.use(session({
   saveUninitialized: true,
   cookie:{
     secure:false
-  },
-  store:new filestore()
+  }
 }))
   
 const authrouter = require("./routes/Auth"),
@@ -43,11 +42,12 @@ app.use("/board", boardrouter)
 app.use("/calendar", calendarrouter)
 app.use("/mypage", mypagerouter)
 
-app.get("/", (req, res) => {
+app.get("/", async(req, res) => {
   if(req.session.isOwner == true){
     res.render('index',{
         isOwner : req.session.isOwner,
-        email : req.session.email
+        email : req.session.email,
+        nick : doc.data().nick
     })
 }else{
     res.render('index',{
