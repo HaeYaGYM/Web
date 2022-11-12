@@ -22,13 +22,19 @@
             </a>
         </div>
         <div id="header__main">
-            <a href="/"><img src="/logo/logo.png" id="header__logo"></a>
+            <a href="/"><img src="aa.png" id="header__logo"></a>
             <nav>
+                <% if(isOwner == false) {%>
+                    <a href="/Board/list">커뮤니티</a> 
+                    <a href="/auth/sign_in">로그인</a>
+                    <a href="/auth/sign_up">회원가입</a>
+                    <% }else{ %>
                         <%= nick %>
                         <a href="/MyPage">마이페이지</a> 
                         <a href="/Calendar">운동달력</a> 
-                        <a href="/Board/list">커뮤니티</a>
+                        <a href="/Board/list">커뮤니티</a> 
                         <a href="/auth/logout">로그아웃</a>   
+                        <% } %>
             </nav>
         </div>
     </header>

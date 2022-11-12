@@ -85,7 +85,12 @@ router.post('/sign_up_process', async(req, res) =>{
 router.post('/update_password', async(req, res)=>{
   const auth = getAuth()
   const user = auth.currentUser
-  await sendPasswordResetEmail(auth, user.email)})  
+  await sendPasswordResetEmail(auth, user.email)
+  res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+  res.write("<script>alert('이메일을 확인해주세요!')</script>")
+  res.write("<script>window.location=\"/auth/sign_in\"</script>")
+  }
+  )  
 
 router.get('/logout', async(req, res)=>{
   const auth = getAuth();

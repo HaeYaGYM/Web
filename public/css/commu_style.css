@@ -4,6 +4,7 @@ body {
     border: 0;
     font: inherit;
     vertical-align: baseline;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 html {

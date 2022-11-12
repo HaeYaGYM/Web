@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <title>HaeYaGym
     </title>
 </head>
@@ -28,7 +29,7 @@
                 <%= nick %>
                     <a href="/MyPage">마이페이지</a> 
                     <a href="/Calendar">운동달력</a> 
-                    <a href="/Board/list">커뮤니티</a>
+                    <a href="/Board/list">커뮤니티</a> 
                     <a href="/auth/logout">로그아웃</a>   
             </nav>
         </div>
@@ -44,9 +45,9 @@
                     </div>
                  
                     <div class="profile_name">
-                        <input type="text" id="pro_name" class="pro_name">
+                        <div class="pro_name"></div>
                     </div>
-                    <div class="my_pro">
+                    <!-- <div class="my_pro">
                         나의 소개
                     </div>
                     <div class="my_pro_box">
@@ -54,95 +55,72 @@
                     </div>
                     <div class="save">
                         <button class="btn_save" id="btn_save">저장</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="main_section">
                 <div class="main_head">
                 <div class="main_write">내 정보</div>
-                <div class="add_write">*표시는 반드시 입력하셔야 하는 항목입니다 </div>
             </div>
             <div class="table_class">
                 <table class="up_table">
                     <tr>
-                        <td class="left_table">아이디</td>
-                        <td>
-                            <input type="text" id="pwd_ok" class="inline">
+                        <td class="left_table">이메일</td>
+                        <td class="right_table">
+                            <div class="table_in"></div>
                         </td>
                     </tr>
                     <tr>
                         <td class="left_table">비밀번호</td>
-                        <td>
-                            <input type="password" id="pwd_ok" class="inline">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="left_table">비밀번호 확인</td>
-                        <td>
-                            <input type="password" id="pwd_ok" class="inline">
+                        <td class="right_table">
+                            <div class="pwd_container">
+                            <div class="table_in" id="pwd_table_in"></div>
+                            <div class="change">
+                            <a href='/auth/update_password'><button class="pwd_change">비밀번호 변경</button></a>
+                        </div>
+                    </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="left_table">이름</td>
-                        <td>
-                            <input type="text" id="pwd_ok" class="inline">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="left_table">닉네임</td>
-                        <td>
-                            <input type="text" id="pwd_ok" class="inline">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="left_table">이메일</td>
-                        <td>
-                            <input type="text" id="pwd_ok" class="inline">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="left_table">휴대폰번호</td>
-                        <td>
-                            <input type="text" id="pwd_ok" class="inline">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="left_table">성별</td>
-                        <td>
-                            <input type="text" id="pwd_ok" class="inline">
+                        <td class="right_table">
+                            <div class="table_in"></div>
                         </td>
                     </tr>
                     <tr>
                         <td class="left_table">생일</td>
-                        <td>
-                            <input type="text" id="pwd_ok" class="inline">
+                        <td class="right_table">
+                            <div class="table_in"></div>
+                        </td>
+                    </tr>
+                    <form action="/auth/update_progress" method="post">
+                    <tr>
+                        <td class="left_table">닉네임</td>
+                        <td class="right_table">
+                            <div class="table_in"></div>
                         </td>
                     </tr>
                     <tr>
-                        <td class="left_table">휴먼회원 방지기간</td>
-                        <td>
-                            <label>
-                              <input type="radio" name="year" value="1">1년  
-                            </label>
-                            <label>
-                                <input type="radio" name="year" value="3">3년  
-                              </label>
-                              <label>
-                                <input type="radio" name="year" value="5">5년  
-                              </label>
-                              <label>
-                                <input type="radio" name="year" value="end">탈퇴시까지  
-                              </label>
+                        <td class="left_table">키</td>
+                        <td class="right_table">
+                            <div class="table_in"></div>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="left_table">몸무게</td>
+                        <td class="right_table">
+                            <div class="table_in"></div>
+                        </td>
+                    </tr>
+                </form>
                 </table>
 
-
+                
             </div>
         </div>
         </div>
         <div class="btn_ok">
-            <button class="btn">확인</button>
+            <input type="submit" class="btn" value="확인">
         </div>
 
     </div>
