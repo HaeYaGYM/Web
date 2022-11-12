@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/css.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -23,14 +25,14 @@
             <a href="/"><img src="/logo/logo.png" id="header__logo"></a>
             <nav>
                 <% if(isOwner == false) {%>
-                    <a href="/Board">커뮤니티</a> 
+                    <a href="/Board/list">커뮤니티</a> 
                     <a href="/auth/sign_in">로그인</a>
                     <a href="/auth/sign_up">회원가입</a>
                     <% }else{ %>
-                        <%= email %>
+                        <%= nick %>
                         <a href="/MyPage">마이페이지</a> 
                         <a href="/Calendar">운동달력</a> 
-                        <a href="/Board">커뮤니티</a> 
+                        <a href="/Board/list">커뮤니티</a> 
                         <a href="/auth/logout">로그아웃</a>   
                         <% } %>
             </nav>

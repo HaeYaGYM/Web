@@ -2,16 +2,17 @@
     background-color: #4C94FA;
     color: white;
     font-weight: 300;
-    padding: 0.75rem;
+    padding: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 17px;
 }
 
 #header__mobileAd a {
     text-decoration: none;
     color: white;
-    margin-left: 1.875rem;
+    margin-left: 22.5px;
 }
 
 #header__main {
@@ -19,7 +20,7 @@
     justify-content: space-between;
     align-items: center;
     width: 880px;
-    margin: 0.75rem auto;
+    margin: 12px auto;
 }
 
 #header__main #header__logo {
@@ -29,11 +30,12 @@
 
 #header__main nav a{
     text-decoration: none;
-    margin: 0.5rem;
+    margin: 8px;
     color: black;
 }
 
 header {
-    font-size: 0.75rem;
+    font-size: 12px;
     background-color: white;
+    font-family: 'Noto Sans KR', sans-serif;
 }

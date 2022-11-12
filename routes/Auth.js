@@ -1,37 +1,44 @@
 const express = require("express");
 const router = express.Router();
 const { getAuth,  
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,signOut, sendPasswordResetEmail
     } = require('firebase/auth');
   const firestore = require('firebase-admin').firestore();
 const admin = require('firebase-admin')
-  const auth = getAuth();
+ 
 
 router.get("/sign_in", (req,res)=>{
     res.render('sign_in')})
 
 router.post('/sign_in_process', async(req, res) =>{
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
-    const user = {
+  const auth = getAuth(); 
+  const user = {
         email:req.body.email,
         password:req.body.pw
     }
+    const userRef = firestore.collection('users').doc(req.body.email)
+    
     signInWithEmailAndPassword(auth, user.email, user.password)
     .then( () =>{
       res.status(200)
-      req.session.isOwner = true
-      req.session.email = user.email
-      console.log(req.session)
-      res.redirect('/')}
-    )
-      .catch ((error) => {const errorCode = error.code;
+      }
+    ).catch ((error) => {const errorCode = error.code;
       const errorMessage = error.message;
       res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
       res.write(`<script>alert('${errorCode} ${errorMessage}')</script>`)
       res.write("<script>window.location=\"/auth/sign_in\"</script>")}
-      )})
+      )
+    const doc = await userRef.get()
+    if (!doc.exists) {
+        console.log('No such document!');
+    } else {
+        req.session.isOwner = true
+        req.session.nick = doc.data().nick
+        console.log('Document data:', doc.data().nick); 
+      }
+      console.log(req.session)
+      res.redirect('/')
+    })
       
 router.get("/sign_up", (req,res)=>
         res.render('sign_up'))
@@ -78,11 +85,22 @@ router.post('/sign_up_process', async(req, res) =>{
         const errorMessage = error.message;});
     }})
 
-router.get('/logout', (req, res)=>{
+router.post('/update_password', async(req, res)=>{
+  const auth = getAuth()
+  const user = auth.currentUser
+  await sendPasswordResetEmail(auth, user.email)
+  res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+  res.write("<script>alert('이메일을 확인해주세요!')</script>")
+  res.write("<script>window.location=\"/auth/sign_in\"</script>")
+  }
+  )  
+
+router.get('/logout', async(req, res)=>{
+  const auth = getAuth();
+  await signOut(auth);
     req.session.destroy(function(error){
-        req.session
-        res.redirect('/')
-    }
-)})    
+        req.session})
+    res.redirect('/')
+})    
         
 module.exports = router

@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="/css/join.css">
         <link rel="stylesheet" href="/css/footer.css">
         <link rel="stylesheet" href="/css/header.css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script src="/js/join.js"></script>
@@ -49,12 +50,12 @@
           
           <!-- password input -->
           <div class="input__block">
-             <input type="password" placeholder="Password" class="input" id="pw" name="password"   />
+             <input type="password" placeholder="Password" class="input" id="pw" name="password" minlength="6" />
           </div>
           
           <!-- repeat password input -->
           <div class="input__block">
-            <input type="password" placeholder="repeat_password" class="input" id="pw2" name="pw2"   />
+            <input type="password" placeholder="repeat_password" class="input" id="pw2" name="pw2" minlength="6"  />
          </div>
 
          <!-- name -->
@@ -90,7 +91,8 @@
           </div> -->
           <!-- sign in button -->
 
-          <input type="submit" class="signin__btn" value="Sign Up">
+          
+          <input type="submit" class="signin__btn" value="Sign Up" onclick="sign_up_finish()">
         </form>
         <!-- separator -->
       </div>

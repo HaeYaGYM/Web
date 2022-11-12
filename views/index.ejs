@@ -27,15 +27,14 @@
             <a href="/"><img src="/logo/logo.png" id="header__logo"></a>
             <nav>
                 <% if (isOwner == false) {%>
-                <a href="/Board">커뮤니티</a>
+                <a href="/Board/list">커뮤니티</a>
                 <a href="/auth/sign_in">로그인</a>
                 <a href="/auth/sign_up">회원가입</a>
                 <% } else { %>
-                    <%= email %>
                     <%= nick %>
                     <a href="/MyPage">마이페이지</a> 
                     <a href="/Calendar">운동달력</a> 
-                    <a href="/Board">커뮤니티</a> 
+                    <a href="/Board/list">커뮤니티</a> 
                     <a href="/auth/logout">로그아웃</a>   
                     <% } %>
             </nav>
@@ -151,7 +150,7 @@
             <div id="footer__contact">
                 <p>고객센터</p>
                 <div id="footer__contact__kakao">
-                    <img src="img/kakaotalk_sharing_btn_medium.png" >
+                    <img src="img/kakao.png" >
                     <span>카카오톡 상담</span>
                 </div>
                 <span>평일 09:00 ~ 18:00(점심시간 13:00 ~ 14:00)</span>
