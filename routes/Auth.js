@@ -33,7 +33,12 @@ router.post('/sign_in_process', async(req, res) =>{
         console.log('No such document!');
     } else {
         req.session.isOwner = true
+        req.session.email = auth.currentUser.email
         req.session.nick = doc.data().nick
+        req.session.name = doc.data().name
+        req.session.birth = doc.data().birth
+        req.session.height = doc.data().height
+        req.session.weight = doc.data().weight
         console.log('Document data:', doc.data().nick); 
       }
       console.log(req.session)
