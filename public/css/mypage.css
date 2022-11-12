@@ -113,6 +113,17 @@ tr,td{
 .btn_ok{
   margin: auto;
   display: block;
+  background-color: rgb(62,176,247);
+  width: 80px;
+  height: 40px;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-color: rgb(62, 176, 247);
+  border: 0;
+  outline: 0;
+  color: white;
 }
 
 .btn{
@@ -475,3 +486,13 @@ tr,td{
       #pwd_table_in{
         margin-top: 7px;
       }
+
+      #table_input{
+          margin-left: 10px;
+          width: 247px;
+          height: 33px;
+          background-color: rgb(216, 216, 216);
+          display: inline-block;
+          border: 0;
+      }
+      
