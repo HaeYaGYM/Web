@@ -47,7 +47,7 @@
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
-                    글 제목이 들어갑니다.
+                    <%=row.brdtitle%>
                 </div>
                 <div class="info">
                     <dl>
@@ -56,11 +56,11 @@
                     </dl>
                     <dl>
                         <dt>작성자</dt>
-                        <dd>강석주</dd>
+                        <dd><%= nick %></dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dd>2022.11.11</dd>
+                        <dd><%=row.brddate%></dd>
                     </dl>
                     <dl>
                         <dt>조회</dt>
@@ -68,19 +68,14 @@
                     </dl>
                 </div>
                 <div class="cont">
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다<br>
-                    글 내용이 들어갑니다
+                    <%=row.brdmemo%>
                 </div>
             </div>
             <div class="bt_wrap">
-                <a href="list.html" class="on">목록</a>
-                <a href="edit.html">수정</a>
+                <a href="/board/list" class="on">목록</a>
+                <a href="Delete?brdno=<%=row.brdno%>">삭제</a>
+		        <a href="write?brdno=<%=row.brdno%>">수정</a>
+                
             </div>
         </div>
     </div>

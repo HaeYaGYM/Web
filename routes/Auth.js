@@ -6,7 +6,6 @@ const { getAuth,
     } = require('firebase/auth');
   const firestore = require('firebase-admin').firestore();
 const admin = require('firebase-admin');
-const { async } = require("@firebase/util");
 
 
 
@@ -36,7 +35,7 @@ router.post('/sign_in_process', async(req, res) =>{
         console.log('No such document!');
     } else {
         req.session.isOwner = true
-        req.session.email = doc.data().nick
+        req.session.email = doc.data().email
         req.session.nick = doc.data().nick
         req.session.name = doc.data().name
         req.session.birth = doc.data().birth
@@ -110,7 +109,9 @@ router.post("/update", async(req,res)=>{
     weight: req.body.weight,
     height: req.body.height
   })
-    res.redirect("/mypage")})
+  res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+  res.write("<script>alert('변경되었습니다!')</script>")
+  res.write("<script>window.location=\"/mypage\"</script>")})
   
 router.get('/logout', async(req, res)=>{
   const auth = getAuth();

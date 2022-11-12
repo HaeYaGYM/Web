@@ -46,6 +46,7 @@ app.get("/", (req, res) => {
   if(req.session.isOwner == true){
     res.render('index',{
     nick : req.session.nick,
+    email : req.session.email,
     isOwner : req.session.isOwner
 })
   }
