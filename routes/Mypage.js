@@ -5,7 +5,7 @@ router.get("/", (req, res) => {
     if(req.session.isOwner == true){
       res.render('mypage',{
           isOwner : req.session.isOwner,
-          email : req.session.email
+          nick : req.session.nick
       })
   }else{
       res.render('mypage',{

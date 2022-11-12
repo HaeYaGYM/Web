@@ -85,7 +85,7 @@ router.post('/sign_up_process', async(req, res) =>{
         const errorMessage = error.message;});
     }})
 
-router.post('/update_password', async(req, res)=>{
+router.get('/update_password', async(req, res)=>{
   const auth = getAuth()
   const user = auth.currentUser
   await sendPasswordResetEmail(auth, user.email)
