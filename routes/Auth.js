@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { getAuth,  
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,signOut, sendPasswordResetEmail
     } = require('firebase/auth');
   const firestore = require('firebase-admin').firestore();
 const admin = require('firebase-admin')
@@ -11,12 +11,13 @@ router.get("/sign_in", (req,res)=>{
     res.render('sign_in')})
 
 router.post('/sign_in_process', async(req, res) =>{
-    const user = {
+  const auth = getAuth(); 
+  const user = {
         email:req.body.email,
         password:req.body.pw
     }
     const userRef = firestore.collection('users').doc(req.body.email)
-    const auth = getAuth();
+    
     signInWithEmailAndPassword(auth, user.email, user.password)
     .then( () =>{
       res.status(200)
@@ -80,6 +81,11 @@ router.post('/sign_up_process', async(req, res) =>{
         const errorCode = error.code;
         const errorMessage = error.message;});
     }})
+
+router.post('/update_password', async(req, res)=>{
+  const auth = getAuth()
+  const user = auth.currentUser
+  await sendPasswordResetEmail(auth, user.email)})  
 
 router.get('/logout', async(req, res)=>{
   const auth = getAuth();

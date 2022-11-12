@@ -6,7 +6,6 @@ const cors = require('cors');
 const morgan = require('morgan');
 const serviceAccount = require('./haeyagym.json')
 const session = require('express-session')
-const filestore = require('session-file-store')(session)
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -29,8 +28,7 @@ app.use(session({
   saveUninitialized: true,
   cookie:{
     secure:false
-  },
-  store : new filestore()
+  }
 }))
   
 const authrouter = require("./routes/Auth"),
