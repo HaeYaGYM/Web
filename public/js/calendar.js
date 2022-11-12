@@ -155,7 +155,7 @@ function changeToday(e){
 }
 clickStart();
 
-//클릭해서 날짜 변경 및 왼쪽 화면 변경 
+//클릭해서 날짜 변경 및 왼쪽 화면 변경
 
 function reshowingList(){
     keyValue = today.getFullYear() + '' + today.getMonth()+ '' + today.getDate();
