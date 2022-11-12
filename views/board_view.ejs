@@ -52,7 +52,7 @@
                 <div class="info">
                     <dl>
                         <dt>번호</dt>
-                        <dd>1</dd>
+                        <dd>ha..</dd>
                     </dl>
                     <dl>
                         <dt>작성자</dt>
@@ -73,8 +73,10 @@
             </div>
             <div class="bt_wrap">
                 <a href="/board/list" class="on">목록</a>
+                <% if (row.email = email) {%> 
                 <a href="Delete?brdno=<%=row.brdno%>">삭제</a>
 		        <a href="write?brdno=<%=row.brdno%>">수정</a>
+                <%} %>
                 
             </div>
         </div>

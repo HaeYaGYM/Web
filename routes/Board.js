@@ -67,7 +67,8 @@ router.get("/view", async(req,res)=>{
         res.render('board_view', {
             row: childData,
             isOwner : req.session.isOwner,
-            nick : req.session.nick
+            nick : req.session.nick,
+            email : req.session.email
         });
     })
     }else{
@@ -77,7 +78,10 @@ router.get("/view", async(req,res)=>{
         
         childData.brddate = dateFormat(childData.brddate, "yyyy-mm-dd hh:mm");
         res.render('board_view', {
-            row: childData
+            row: childData,
+            isOwner : false,
+            nick : req.session.nick,
+            email : req.session.email
         });
     })
     }
@@ -85,6 +89,7 @@ router.get("/view", async(req,res)=>{
 
 router.post('/Save', function(req,res,next){
     var postData = req.body;
+    console.log(postData)
     if (!postData.brdno) {  // new
         postData.email = req.session.email
         postData.nick = req.session.nick
@@ -103,7 +108,7 @@ router.post('/Save', function(req,res,next){
 router.get('/Delete', async function(req,res,next){
     await firestore.collection('board').doc(req.query.brdno).delete()
 
-    res.redirect('boardList');
+    res.redirect('/board/List');
 });
 
 module.exports = router
