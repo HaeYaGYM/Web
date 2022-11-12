@@ -6,7 +6,6 @@ const cors = require('cors');
 const morgan = require('morgan');
 const serviceAccount = require('./haeyagym.json')
 const session = require('express-session')
-const filestore = require('session-file-store')(session)
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
@@ -29,14 +28,13 @@ app.use(session({
   saveUninitialized: true,
   cookie:{
     secure:false
-  },
-  store:new filestore()
+  }
 }))
   
 const authrouter = require("./routes/Auth"),
   boardrouter = require("./routes/Board"),
   calendarrouter = require("./routes/Calendar"),
-  mypagerouter = require("./routes/Mypage")
+  mypagerouter = require("./routes/Mypage");
 
 app.use("/auth", authrouter)
 app.use("/board", boardrouter)
@@ -44,16 +42,19 @@ app.use("/calendar", calendarrouter)
 app.use("/mypage", mypagerouter)
 
 app.get("/", (req, res) => {
+  console.log(req.session)
   if(req.session.isOwner == true){
     res.render('index',{
-        isOwner : req.session.isOwner,
-        email : req.session.email
-    })
-}else{
+    nick : req.session.nick,
+    isOwner : req.session.isOwner
+})
+  }
+  else{
     res.render('index',{
         isOwner : false
     })
-}})
+  }
+})
 
 // app.post('/s', async(req, res) => {
 //   const user = {
