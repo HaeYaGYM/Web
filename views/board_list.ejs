@@ -134,10 +134,12 @@
                 <a href="#" class="bt next">></a>
                 <a href="#" class="bt last">>></a>
             </div>
+            <% if (isOwner == true) {%>
             <div class="bt_wrap">
-                <a href="write.html" class="on">글 작성</a>
+                <a href="/board/Write" class="on">글 작성</a>
                 <!--<a href="#">수정</a>-->
             </div>
+            <% } %>
         </div>
     </div>
     <footer>

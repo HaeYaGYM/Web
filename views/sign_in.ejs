@@ -10,6 +10,24 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script src="/js/join.js"></script>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <script>function handleCredentialResponse(response) {
+          // Build Firebase credential with the Google ID token.
+          const idToken = response.credential;
+          const credential = GoogleAuthProvider.credential(idToken);
+        
+          // Sign in with credential from the Google user.
+          signInWithCredential(auth, credential).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.email;
+            // The credential that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
+          });
+        }</script>
     </head>
     <body>
       <header>
@@ -54,7 +72,19 @@
           <input type="submit" class="signin__btn" value="Sign in">
         </form>
           <!-- sign in button with google-->
-          <input type="submit" class="signin_btn_google" value="Sign in with google">
+          <div id="g_id_onload"
+         data-client_id="223189258523-r8kqa0ufmv3rdg5clclhms2e4mtopmbr.apps.googleusercontent.com"
+         data-auto_prompt="false"
+         data-callback="handleCredentialResponse"> 
+         <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-shape="rectangular"
+         data-logo_alignment="left">
+      </div>
+         
         </form>
         <!-- separator -->
         <div class="separator">
@@ -66,7 +96,7 @@
         </button>
 
         <button class="sign_up__btn">
-          <a href="/auth/sign_up">Sign Up with google</a>
+          <a href="/auth/google_process">Sign Up with google</a>
         </button>
       </div>
       

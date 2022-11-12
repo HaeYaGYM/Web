@@ -1,11 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const { getAuth,  
-    signInWithEmailAndPassword,signOut, sendPasswordResetEmail
+    signInWithEmailAndPassword,signOut, sendPasswordResetEmail,
+    GoogleAuthProvider,signInWithCredential,
     } = require('firebase/auth');
   const firestore = require('firebase-admin').firestore();
-const admin = require('firebase-admin')
- 
+const admin = require('firebase-admin');
+const { async } = require("@firebase/util");
+
+
 
 router.get("/sign_in", (req,res)=>{
     res.render('sign_in')})
@@ -33,7 +36,7 @@ router.post('/sign_in_process', async(req, res) =>{
         console.log('No such document!');
     } else {
         req.session.isOwner = true
-        req.session.email = auth.currentUser.email
+        req.session.email = doc.data().nick
         req.session.nick = doc.data().nick
         req.session.name = doc.data().name
         req.session.birth = doc.data().birth
@@ -100,6 +103,15 @@ router.get('/update_password', async(req, res)=>{
   }
   )  
 
+router.post("/update", async(req,res)=>{
+
+  await firestore.collection("users").doc(req.session.email).update({
+    nick: req.body.nick,
+    weight: req.body.weight,
+    height: req.body.height
+  })
+    res.redirect("/mypage")})
+  
 router.get('/logout', async(req, res)=>{
   const auth = getAuth();
   await signOut(auth);
