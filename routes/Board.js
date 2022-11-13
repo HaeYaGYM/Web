@@ -23,7 +23,7 @@ router.get("/list", async(req,res)=>{
         });
 
     }else{
-        await firestore.collection('board').orderBy("brddate", "desc").limit(10).get()
+        await firestore.collection('board').orderBy("brddate", "desc").get()
         .then((snapshot) => {
             var rows = [];
             snapshot.forEach((doc) => {
@@ -62,7 +62,9 @@ router.get("/view", async(req,res)=>{
         await firestore.collection('board').doc(req.query.brdno).get()
     .then((doc) => {
         var childData = doc.data();
-        
+        firestore.collection('board').doc(req.query.brdno).update({
+            view : childData.view+1
+        })
         childData.brddate = dateFormat(childData.brddate, "yyyy-mm-dd hh:mm");
         res.render('board_view', {
             row: childData,
@@ -75,7 +77,9 @@ router.get("/view", async(req,res)=>{
         await firestore.collection('board').doc(req.query.brdno).get()
     .then((doc) => {
         var childData = doc.data();
-        
+        firestore.collection('board').doc(req.query.brdno).update({
+            view : childData.view+1
+        })
         childData.brddate = dateFormat(childData.brddate, "yyyy-mm-dd hh:mm");
         res.render('board_view', {
             row: childData,
@@ -93,6 +97,7 @@ router.post('/Save', function(req,res,next){
     if (!postData.brdno) {  // new
         postData.email = req.session.email
         postData.nick = req.session.nick
+        postData.view = 0
         postData.brddate = Date.now();
         var doc = firestore.collection("board").doc();
         postData.brdno = doc.id;
