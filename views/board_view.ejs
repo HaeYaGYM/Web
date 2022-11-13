@@ -22,7 +22,7 @@
             </a>
         </div>
         <div id="header__main">
-            <a href="/"><img src="aa.png" id="header__logo"></a>
+            <a href="/"><img src="/logo/logo.png" id="header__logo"></a>
             <nav>
                 <% if(isOwner == false) {%>
                     <a href="/Board/list">커뮤니티</a> 
@@ -47,7 +47,10 @@
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
-                    <%=row.brdtitle%>
+                    <dl id="view_title">
+                        <dt>제목</dt>
+                        <dd><%=row.brdtitle%></dd>
+                    </dl>
                 </div>
                 <div class="info">
                     <dl>
