@@ -38,45 +38,48 @@
             </nav>
         </div>
     </header>
-    <table border="1" style="width:600px">
-		<colgroup>
-			<col width='8%' />
-			<col width='*%' />
-			<col width='15%' />
-			<col width='15%' />
-		</colgroup>
-		<thead>
-			<tr>
-				<th>No.</th> 
-				<th>Title</th>
-				<th>Writer</th>
-				<th>Date</th>
-			</tr>
-		</thead>
-		<tbody>
-		<%
-			 for(var i=0; i<rows.length; i++) {
-		%>
-			<tr>
-				<td><%=rows.length-i%></td>
-				<td><a href='/board/view?brdno=<%=rows[i].brdno%>'><%=rows[i].brdtitle%></a></td>
-				<td><%=rows[i].nick%></td>
-				<td><%=rows[i].brddate%></td>
-			</tr>
-		<%
-			 }
-		%>
-		</tbody>
-	</table>    
+    <div class="board_wrap">
+        <div class="board_title">
+            커뮤니티
+        </div>
+    <table class="board_list">
+      <colgroup>
+         <col width='8%' />
+         <col width='*%' />
+         <col width='15%' />
+         <col width='15%' />
+      </colgroup>
+      <thead class="top">
+         <tr class="top">
+            <th class="num">번호</th> 
+            <th class="title">제목</th>
+            <th class="writer">작성자</th>
+            <th class="date">날짜</th>
+         </tr>
+      </thead>
+      <tbody>
+      <%
+          for(var i=0; i<rows.length; i++) {
+      %>
+         <tr>
+            <td class="num"><%=rows.length-i%></td>
+            <td class="title"><a href='/board/view?brdno=<%=rows[i].brdno%>'><%=rows[i].brdtitle%></a></td>
+            <td class="writer"><%=rows[i].nick%></td>
+            <td class="date"><%=rows[i].brddate%></td>
+         </tr>
+      <%
+          }
+      %>
+      </tbody>
+   </table>    
 
             <% if (isOwner == true) {%>
-            <div class="bt_wrap">
+            <div class="bt_wrap" id="bt_on">
                 <a href="/board/Write" class="on">글 작성</a>
                 <!--<a href="#">수정</a>-->
             </div>
             <% } %>
         </div>
-    </div>
     <footer>
         <div>
             <nav id="footer__nav">
@@ -86,6 +89,7 @@
                 <a href="">개인정보처리방침</a>
                 <a href="">환불규정</a>
             </nav>
+        
             <div id="footer__info">
                 <strong>(주)해야짐</strong><br> 
                 <span>대표 이혁주 | 8221 서울시 구로구 경인로 445 ([구]고척동 62-160) 동양미래대학교</span><br>

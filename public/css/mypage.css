@@ -38,6 +38,7 @@ td{
 .profile{
   width: 200px;
   height: 420px;
+  margin-left: 50px;
   background-color: rgba(236, 247, 254, 0.966);
   margin-top: 20px;
   border-top-left-radius: 2em;
@@ -50,9 +51,9 @@ td{
 .main_section{
   display: inline-block;
   width: 800px;
-  margin-left: 75px;
+  margin-left: 100px;
 }
-  .main_head{
+.main_head{
       width: 900px;
 }
 .main_write, .add_write{
@@ -71,6 +72,7 @@ td{
 .left_write{
   font-weight: 600;
   font-size: 16px;
+  margin-left: 10px;
 }
 
 .table_class{
@@ -446,7 +448,7 @@ tr,td{
         margin-left: 10px;
         width: 250px;
         height: 35px;
-        background-color: rgb(216, 216, 216);
+        background-color: white;
         display: inline-block;
       }
 
@@ -491,7 +493,7 @@ tr,td{
           margin-left: 10px;
           width: 247px;
           height: 33px;
-          background-color: rgb(216, 216, 216);
+          background-color: white;
           display: inline-block;
           border: 0;
       }
