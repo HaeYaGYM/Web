@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
 </head>
 <body>
     <header>
@@ -41,7 +43,11 @@
         </div>
     </header>
     <main>
-        <section id="main__section1">
+        <section id="main__section1"              
+        data-aos="fade-up" 
+        data-aos-offset="200" 
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1600">
             <span class="title">내 몸에 더 잘 맞는<br> 개인 맞춤 운동 서비스<br> <strong>해야짐</strong>과 함께하세요</span>
             <p>
                 대부분 뚜렷한 목적으로 운동을 시작하지만, 모두 성공적인 결과를 얻지는 못합니다.<br>
@@ -57,19 +63,35 @@
         </section>
         <hr>
         <section id="main__section2">
-            <span class="desc-big">
+            <span class="desc-big"
+            data-aos="fade-up" 
+            data-aos-offset="200" 
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1600">
                 어떤 운동을 할지 고민이라면, 내 몸에 더 잘 맞는<br>
                 <strong>해야짐</strong>을 시작하세요!
             </span>
-            <span id="main__section2__check">
+            <span id="main__section2__check"
+            data-aos="fade-up" 
+            data-aos-offset="200" 
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1600">
                 <i class="fa-solid fa-check"></i>
             </span>
-            <p>
+            <p
+            data-aos="fade-up" 
+            data-aos-offset="200" 
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1600">
                 누구에게나 똑같은 운동은 그만!<br>
                 운동 종류, 운동 횟수, 동작까지<br>
                 나에게 맞는 맞춤 운동을 만나보세요.
             </p>
-            <div id="main__section2__benefits">
+            <div id="main__section2__benefits"
+            data-aos="fade-up" 
+            data-aos-offset="200" 
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1600">
                 <div class="main__section2__benefit">
                     <div class="mini-logo">
                         <img src="/logo/logo.png" width="30px" alt="">
@@ -127,7 +149,11 @@
                     </span>
                 </div>
             </div>
-            <div id="main__section2__trigger">
+            <div id="main__section2__trigger"
+            data-aos="zoom-in" 
+            data-aos-offset="200" 
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1600">
                 <span>지금 바로 시작하세요!</span>
                 <a href="" class="button">함께하기</a>
             </div>
@@ -158,5 +184,8 @@
             </div>
         </div>
     </footer>
+    <script> 
+        AOS.init();
+    </script>
 </body>
 </html>

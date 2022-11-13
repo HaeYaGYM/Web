@@ -51,7 +51,7 @@ td{
 .main_section{
   display: inline-block;
   width: 800px;
-  margin-left: 100px;
+  margin-left: 300px;
 }
 .main_head{
       width: 900px;
@@ -113,7 +113,7 @@ tr,td{
   height: 37.5px;
 }
 .btn_ok{
-  margin: auto;
+  margin-left: 700px;
   display: block;
   background-color: rgb(62,176,247);
   width: 80px;
@@ -176,6 +176,7 @@ tr,td{
   }
 
   .pro_name{
+    text-align: center;
     background-color: white;
     width: 120px;
     height: 30px;
@@ -237,7 +238,7 @@ tr,td{
     }
 
     td > .right_table{
-      width: 450px;
+      width: 550px;
     }
 
     td{
@@ -279,13 +280,14 @@ tr,td{
       border-top-right-radius: 2em;
       border-bottom-left-radius: 2em;
       border-bottom-right-radius: 2em;
+      border: 1px solid rgb(216, 216, 216);
       position: relative;
     }
   
     .main_section{
       display: inline-block;
       width: 500px;
-      margin-left: 75px;
+      margin-left: 200px;
     }
       .main_head{
           width: 900px;
@@ -304,7 +306,7 @@ tr,td{
     }
   
     .left_write{
-      margin-left: 90px;
+      margin-left: 140px;
       font-weight: 600;
       font-size: 16px;
     }
@@ -319,7 +321,7 @@ tr,td{
     }
   
     table{
-      width: 700px;
+      width: 900px;
       border-top: 3px solid;
       border-color: rgb(216, 216, 216);
       border-collapse : collapse;
@@ -350,8 +352,9 @@ tr,td{
       height: 37.5px;
     }
     .btn_ok{
-      margin: auto;
+      margin-left: 820px;
       display: block;
+      margin-bottom: 100px;
     }
   
     .btn{
@@ -463,7 +466,7 @@ tr,td{
         width: 120px;
         height: 30px;
         margin-top: 10px;
-        margin-right: 100px;
+        margin-left: 150px;
         background-color: rgb(236, 247, 254);
         border: 0;
         outline: 0;
@@ -496,5 +499,10 @@ tr,td{
           background-color: white;
           display: inline-block;
           border: 0;
+      }
+
+
+      #in_table{
+        margin-top: 7px;
       }
       

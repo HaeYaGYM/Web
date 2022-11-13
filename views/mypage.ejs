@@ -36,28 +36,7 @@
     </header>
     <div class="container">
         <div class="page_name"><strong>마이페이지</strong></div>
-        <div class="page_body">
-            <div class="left_section">
-                <div class="left_write">내 프로필</div>
-                <div class="profile">
-                    <div class="img">
-                    
-                    </div>
-                 
-                    <div class="profile_name">
-                        <div class="pro_name"><%= name %></div>
-                    </div>
-                    <!-- <div class="my_pro">
-                        나의 소개
-                    </div>
-                    <div class="my_pro_box">
-                        <input type="text" id="box" class="box">
-                    </div>
-                    <div class="save">
-                        <button class="btn_save" id="btn_save">저장</button>
-                    </div> -->
-                </div>
-            </div>
+       
             <div class="main_section">
                 <div class="main_head">
                 <div class="main_write">    내 정보</div>
@@ -67,7 +46,7 @@
                     <tr>
                         <td class="left_table">이메일</td>
                         <td class="right_table">
-                            <div class="table_in"><%= email %></div>
+                            <div class="table_in" id="in_table"><%= email %></div>
                         </td>
                     </tr>
                     <tr>
@@ -84,13 +63,13 @@
                     <tr>
                         <td class="left_table">이름</td>
                         <td class="right_table">
-                            <div class="table_in"><%= name %></div>
+                            <div class="table_in" id="in_table"><%= name %></div>
                         </td>
                     </tr>
                     <tr>
                         <td class="left_table">생일</td>
                         <td class="right_table">
-                            <div class="table_in"><%= birth %></div>
+                            <div class="table_in"  id="in_table"><%= birth %></div>
                         </td>
                     </tr>
                     <form action="/auth/update" method="post">
@@ -139,7 +118,7 @@
             <div id="footer__contact">
                 <p>고객센터</p>
                 <div id="footer__contact__kakao">
-                    <img src="img/kakaotalk_sharing_btn_medium.png" >
+                    <img src="img/kakaotalk_sharing_btn_medium.png" class="ip_img">
                     <span>카카오톡 상담</span>
                 </div>
                 <span>평일 09:00 ~ 18:00(점심시간 13:00 ~ 14:00)</span>
