@@ -23,7 +23,7 @@ router.get("/list", async(req,res)=>{
         });
 
     }else{
-        await firestore.collection('board').orderBy("brddate", "desc").get()
+        await firestore.collection('board').orderBy("brddate", "desc").limit(10).get()
         .then((snapshot) => {
             var rows = [];
             snapshot.forEach((doc) => {

@@ -52,6 +52,7 @@
       <thead class="top">
          <tr class="top">
             <th class="num">번호</th> 
+            <th class="category">구분</th> 
             <th class="title">제목</th>
             <th class="writer">작성자</th>
             <th class="date">날짜</th>
@@ -63,6 +64,7 @@
       %>
          <tr>
             <td class="num"><%=rows.length-i%></td>
+            <td class="category"><%=rows[i].category%></td>
             <td class="title"><a href='/board/view?brdno=<%=rows[i].brdno%>'><%=rows[i].brdtitle%></a></td>
             <td class="writer"><%=rows[i].nick%></td>
             <td class="date"><%=rows[i].brddate%></td>
