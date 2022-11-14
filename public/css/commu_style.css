@@ -345,8 +345,9 @@ tr{
     text-align: center;
 }
 
-.top > .num, .top > .writer, .top > .date, .top > .title{
+.top > .num, .top > .writer, .top > .date, .top > .title, .top > .category{
     border-bottom: 1px solid rgb(164, 216, 241);
+    color: #777;
 }
 
 .bt_wrap > a.on {
@@ -370,4 +371,12 @@ tr{
     text-align: left;
     display: block;
     margin-left: 12px;
+}
+
+.category{
+    text-align: center;
+}
+
+#main_title{
+    margin-left: 20px;
 }

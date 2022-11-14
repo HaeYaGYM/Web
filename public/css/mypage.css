@@ -16,7 +16,7 @@ td{
 }
 
 .page_name{
-  margin-left: 600px;
+  margin-left: 400px;
   margin-bottom: 100px;
   font-style: bold;
   font-size: 20px;
@@ -51,7 +51,8 @@ td{
 .main_section{
   display: inline-block;
   width: 800px;
-  margin-left: 300px;
+  margin-left: 100px;
+  position: relative;
 }
 .main_head{
       width: 900px;
@@ -113,7 +114,8 @@ tr,td{
   height: 37.5px;
 }
 .btn_ok{
-  margin-left: 700px;
+  margin-top: 100px;
+  margin-left: 500px;
   display: block;
   background-color: rgb(62,176,247);
   width: 80px;
@@ -249,11 +251,12 @@ tr,td{
       display: block;
       max-width: 1280px;
       width: 80%;
-      margin: 100px auto;
+      margin: 80px, auto;
+      margin-left: 200px;
     }
   
     .page_name{
-      margin-left: 600px;
+      margin-left: 500px;
       margin-bottom: 100px;
       font-style: bold;
       font-size: 20px;
@@ -287,7 +290,7 @@ tr,td{
     .main_section{
       display: inline-block;
       width: 500px;
-      margin-left: 200px;
+      margin-left: 100px;
     }
       .main_head{
           width: 900px;
@@ -352,7 +355,7 @@ tr,td{
       height: 37.5px;
     }
     .btn_ok{
-      margin-left: 820px;
+      margin-left: 500px;
       display: block;
       margin-bottom: 100px;
     }
@@ -505,4 +508,3 @@ tr,td{
       #in_table{
         margin-top: 7px;
       }
-      

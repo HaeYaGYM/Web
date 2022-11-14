@@ -83,7 +83,9 @@ router.post('/sign_up_process', async(req, res) =>{
                     height:user.height,
                     birth: user.year + "-" + user.month + "-" + user.day 
                   })
-                  res.redirect('/auth/sign_in')
+                  res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+  res.write("<script>alert('회원가입에 성공하였습니다!')</script>")
+  res.write("<script>window.location=\"/auth/sign_in\"</script>")
     }})
 
 router.get('/update_password', async(req, res)=>{
