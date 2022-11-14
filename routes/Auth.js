@@ -52,9 +52,6 @@ router.get("/sign_up", (req,res)=>
 
 
 router.post('/sign_up_process', async(req, res) =>{
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
     if (req.body.password != req.body.pw2){
         res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
         res.write("<script>alert('비밀번호가 다릅니다')</script>")
@@ -87,9 +84,6 @@ router.post('/sign_up_process', async(req, res) =>{
                     birth: user.year + "-" + user.month + "-" + user.day 
                   })
                   res.redirect('/auth/sign_in')
-        .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;});
     }})
 
 router.get('/update_password', async(req, res)=>{

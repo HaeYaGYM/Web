@@ -4,7 +4,7 @@ const firebaseConfig = require('./config/database.js');
 const { initializeApp } = require('firebase/app');
 const cors = require('cors');
 const morgan = require('morgan');
-const serviceAccount = require('./haeyagym.json')
+const serviceAccount = require('../Web/haeyagym.json')
 const session = require('express-session')
 
 admin.initializeApp({
